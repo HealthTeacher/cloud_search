@@ -54,7 +54,7 @@ module CloudSearch
 
     def query
       return '' unless @query
-      URI.escape(@query).gsub('&', '%26')
+      CGI.escape(@query).gsub('&', '%26')
     end
 
     def boolean_query?
